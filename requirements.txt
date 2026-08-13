@@ -1,0 +1,12 @@
+# Install a CUDA-compatible PyTorch build first: https://pytorch.org/get-started/locally/
+torch
+numpy
+tifffile
+PyYAML
+einops
+monai
+timm
+scipy
+matplotlib
+imagecodecs
+torchsummary
