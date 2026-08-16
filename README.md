@@ -1,9 +1,14 @@
 # SDT-4D
 
-SDT-4D is a self-supervised denoising method for time-lapse 3D microscopy data. It trains directly from noisy observations and uses neighboring Z slices during inference.
+## ✨ Method overview
+
+<p align="center">
+<img src="assets/pipeline.png" width='800'>
+</p>
+
+Volumetric time-lapse fluorescence microscopy is essential for observing biological structures and dynamics in living systems. However, photon-limited acquisition inherently suffers from severe noise, limiting reliable visualization and quantitative analysis. Here we present SDT-4D, a self-supervised denoising framework for volumetric time-lapse fluorescence microscopy. SDT-4D learns directly from noisy data by integrating lateral, axial and temporal information, restoring weak signals while preserving structural continuity and dynamic fidelity. In volumetric two-photon calcium imaging, SDT-4D achieves state-of-the-art denoising performance and preserves neuronal morphology and calcium dynamics. We demonstrate the utility of SDT-4D in photon-limited intravital experiments, including visualization of immune-cell morphology and migration, tracking of three-dimensional neutrophil dynamics and segmentation of three-dimensional glial-cell branches. We further develop Bayesian SDT-4D to quantify uncertainty without requiring clean reference images, generating pixel-wise confidence maps to assess the reliability of restored images. SDT-4D provides a general framework for restoring and interpreting photon-limited four-dimensional fluorescence microscopy data.
 
 This repository contains the implementation for the paper **“Four-dimensional self-supervised denoising enables high-sensitivity volumetric imaging of biological dynamics.”**
-
 The two main entry points are:
 
 - `train.py`: train without clean targets.
@@ -42,8 +47,18 @@ pip install -r requirements.txt
 
 Training requires an NVIDIA GPU. Inference supports both CUDA and CPU, although CPU inference is slow.
 
-## Training
+## Training 
+### 1. Prepare the data  
 
+You can use your own data or download one of the demo data below (*.tif file).
+### Datasets
+
+| Data | Pixel size | Volume rate | Size | Download | Description |
+| :---- | :--------- | :---------- | :--- | :------- | :---------- |
+| Simulated calcium imaging (Noisy) | 1.02 μm | 1 Hz | 29.5 GB | <center>Zenodo repository <a href="https://doi.org/10.5281/zenodo.21960236"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21960236.svg" alt="DOI"></a></center> | Simulated noisy volumetric two-photon calcium imaging data at different SNR levels |
+| Simulated calcium imaging (Ground truth) | 1.02 μm | 1 Hz | 29.5 GB | <center>Zenodo repository <a href="https://doi.org/10.5281/zenodo.21912409"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21912409.svg" alt="DOI"></a></center> | Corresponding noise-free ground-truth volumetric two-photon calcium imaging data |
+
+### 2. Start training
 ```bash
 python train.py \
   --data-dir /path/to/train_tiffs \
