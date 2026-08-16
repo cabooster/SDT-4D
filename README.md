@@ -1,4 +1,4 @@
-# SDT-4D
+# SDT-4D: Self-supervised denoising framework for volumetric time-lapse fluorescence microscopy
 
 ## ✨ Method overview
 
