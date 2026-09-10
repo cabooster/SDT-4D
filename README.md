@@ -308,3 +308,11 @@ The script writes the confidence histogram, epsilon metrics, selected value, sel
 ```
 
 Model checkpoints, TIFF data, and generated results are excluded by `.gitignore`. Before publishing, add an appropriate `LICENSE`, complete paper citation, author information, and a download link for pretrained checkpoints.
+
+## Citation
+
+If you use this dataset in your research, please cite our corresponding preprint:
+
+*4D self-supervised learning of cross-dimensional representation enables high-performance denoising of volumetric fluorescence imaging.*  
+Research Square, 2026.  
+DOI: https://doi.org/10.21203/rs.3.rs-10858302/v1
