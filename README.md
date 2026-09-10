@@ -8,13 +8,19 @@
 
 Volumetric time-lapse fluorescence microscopy is essential for observing biological structures and dynamics in living systems. However, photon-limited acquisition inherently suffers from severe noise, limiting reliable visualization and quantitative analysis. Here we present SDT-4D, a self-supervised denoising framework for volumetric time-lapse fluorescence microscopy. SDT-4D learns directly from noisy data by integrating lateral, axial and temporal information, restoring weak signals while preserving structural continuity and dynamic fidelity. In volumetric two-photon calcium imaging, SDT-4D achieves state-of-the-art denoising performance and preserves neuronal morphology and calcium dynamics. We demonstrate the utility of SDT-4D in photon-limited intravital experiments, including visualization of immune-cell morphology and migration, tracking of three-dimensional neutrophil dynamics and segmentation of three-dimensional glial-cell branches. We further develop Bayesian SDT-4D to quantify uncertainty without requiring clean reference images, generating pixel-wise confidence maps to assess the reliability of restored images. SDT-4D provides a general framework for restoring and interpreting photon-limited four-dimensional fluorescence microscopy data.
 
-This repository contains the implementation for the paper **“Four-dimensional self-supervised denoising enables high-sensitivity volumetric imaging of biological dynamics.”**
+This repository contains the implementation for the paper **“4D self-supervised learning of cross-dimensional representation enables high-performance denoising of volumetric fluorescence imaging.”**
 The two main entry points are:
 
 - `train.py`: train without clean targets.
 - `test.py`: run denoising with optional ground-truth SNR evaluation.
 - `train_UQ.py`: train the uncertainty-quantification (UQ) model.
 - `test_UQ.py`: run Monte Carlo UQ inference.
+
+## Paper
+
+📄 **Preprint:** [4D self-supervised learning of cross-dimensional representation enables high-performance denoising of volumetric fluorescence imaging](https://doi.org/10.21203/rs.3.rs-10858302/v1)
+
+If you use this code or dataset in your research, please cite our preprint.
 
 ## Data format
 
